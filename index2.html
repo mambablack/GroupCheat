@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
+    <style>
+    </style>
 </head>
 
 <body>
@@ -36,7 +38,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>只需三步即可新建一个查询</h1>
+                <div class="page-header">
+                    <h1>只需三步即可新建一个查询</h1>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -69,57 +73,57 @@
                             <div class="panel-body">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 全选
+                                        <input id="zlCheckAll" type="checkbox" value=""> 全选
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 用户编号
+                                        <input class="list zl" id="userId" name type="checkbox" value="userId"> 用户编号
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 手机号码
+                                        <input class="list zl" id="mobile" type="checkbox" value=""> 手机号码
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 账户编号
+                                        <input class="list zl" id="accountNo" type="checkbox" value=""> 账户编号
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 账户名称
+                                        <input class="list zl" id="accountName" type="checkbox" value=""> 账户名称
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 客户编号
+                                        <input class="list zl" id="customNo" type="checkbox" value=""> 客户编号
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 客户名称
+                                        <input class="list zl" id="customName" type="checkbox" value=""> 客户名称
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 主套餐编号
+                                        <input class="list zl" id="productNo" type="checkbox" value> 主套餐编号
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 用户状态
+                                        <input class="list zl" id="userStatus" type="checkbox" value=""> 用户状态
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 用户类型
+                                        <input class="list zl" id="userType" type="checkbox" value=""> 用户类型
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value=""> 网络类型
+                                        <input class="list zl" id="netType" type="checkbox" value> 网络类型
                                     </label>
                                 </div>
                             </div>
@@ -135,7 +139,26 @@
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                Anim pariatur
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="qfCheckAll" type="checkbox" value=""> 全选
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list qf" id="ownFee" type="checkbox" value=""> 欠费金额
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list qf" id="ownMonth" type="checkbox" value=""> 欠费月数
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list qf" id="beginOwnMonth" type="checkbox" value=""> 最早欠费月
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,13 +172,46 @@
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                Anim pariatur
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="jfCheckAll" type="checkbox" value=""> 全选
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list jf" id="yearRecord" type="checkbox" value=""> 年底到期积分
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list jf" id="recorded" type="checkbox" value=""> 已用积分
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list jf" id="leftRecord" type="checkbox" value=""> 积分余额
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list jf" id="newRecord" type="checkbox" value=""> 本月新增积分
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list jf" id="monthRecord" type="checkbox" value=""> 下月到期流量积点
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
+                <ul class="list-group" id="tableHead">
+                    <li class="list-group-item">
+                        <h4>表头</h4></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -165,5 +221,76 @@
 <script src="js/jquery.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#zlCheckAll").click(function(event) {
+        // console.log($(this).prop("checked"));
+        if ($(this).prop("checked")) {
+            $(".zl").prop("checked", this.checked);
+            addTableHead($(".zl"));
+        } else {
+            $(".zl").prop("checked", this.checked);
+            deleteTableHead($(".zl"));
+        };
+
+    });
+    $("#qfCheckAll").click(function(event) {
+        if ($(this).prop("checked")) {
+            $(".qf").prop("checked", this.checked);
+            addTableHead($(".qf"));
+        } else {
+            $(".qf").prop("checked", this.checked);
+            deleteTableHead($(".qf"));
+        };
+
+    });
+    $("#jfCheckAll").click(function(event) {
+        if ($(this).prop("checked")) {
+            $(".jf").prop("checked", this.checked);
+            addTableHead($(".jf"));
+        } else {
+            $(".jf").prop("checked", this.checked);
+            deleteTableHead($(".jf"));
+        };
+
+    });
+    /*
+    选择单条时添加和删除到表头
+    */
+    $(".list").click(function(event) {
+        /* Act on the event */
+        if ($(this).prop("checked")) {
+            addTableHead($(this));
+        } else {
+            deleteTableHead($(this));
+        };
+    });
+});
+/*删除表头后，取消选择checkbox*/
+function deSelectCheckbox(sel) {
+    // console.log(sel)
+    $("#" + sel).attr("checked", false);
+}
+
+function addTableHead(sel) {
+    $(sel).each(function(index, el) {
+        var t_id = $(this).attr("id");
+        // console.log(t_id);
+        var t = "<li class='list-group-item' name=" + t_id + ">" + $(this).parent().text() + "<button type='button' class='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button></li>";
+        $("#tableHead").append(t);
+    });
+    $("#tableHead li").on('click', function(event) {
+        // console.log($(this).index())
+        deSelectCheckbox($(this).attr("name"));
+        $(this).remove();
+    });
+};
+
+function deleteTableHead(sel) {
+    $(sel).each(function(index, el) {
+        $("#tableHead li[name=" + $(this).attr("id") + "]").remove();
+    });
+};
+</script>
 
 </html>
