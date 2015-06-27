@@ -49,7 +49,7 @@
                     <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">第一步:选择查询结果列表
                         <span class="sr-only">30% Complete</span>
                     </div>
-                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">第二步:选择查询条件
+                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">第二步:选择查询条件
                         <span class="sr-only">30% Complete</span>
                     </div>
                     <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">第三步:预览
@@ -208,13 +208,12 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <ul class="list-group sortable" id="tableHead">
-                    <li class="list-group-item sort-disabled disabled" id="list_group_id">
+                <ul class="list-group" id="tableHead">
+                    <li class="list-group-item" id="list_group_id">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <h4>查询结果</h4>
-                                </div>
+                                    <h4>查询结果</h4></div>
                                 <div class="col-md-3">
                                     <a href="index3.html">
                                         <button type="button" class="btn btn-success">确认并下一步</button>
@@ -233,7 +232,6 @@
 <script src="js/jquery.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.sortable.js"></script>
 <script>
 $(document).ready(function() {
     $("#zlCheckAll").click(function(event) {
@@ -279,7 +277,6 @@ $(document).ready(function() {
         };
     });
 });
-$('.sortable').sortable();
 /*删除表头后，取消选择checkbox*/
 function deSelectCheckbox(sel) {
     // console.log(sel)
@@ -290,16 +287,13 @@ function addTableHead(sel) {
     $(sel).each(function(index, el) {
         var t_id = $(this).attr("id");
         // console.log(t_id);
-        var t = "<li class='list-group-item'>" + $(this).parent().text() + "<button type='button' class='close' aria-label='Close' name=" + t_id + "><span aria-hidden='true'>&times;</span></button></li>";
+        var t = "<li class='list-group-item' name=" + t_id + ">" + $(this).parent().text() + "<button type='button' class='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button></li>";
         $("#tableHead").append(t);
     });
-    $('.sortable').sortable({
-        items: ':not(.sort-disabled)'
-    });
-    $("#tableHead li:not('#list_group_id') button").on('click', function(event) {
+    $("#tableHead li:not('#list_group_id')").on('click', function(event) {
         // console.log($(this).index())
         deSelectCheckbox($(this).attr("name"));
-        $(this).parent().remove();
+        $(this).remove();
     });
 };
 
