@@ -49,11 +49,11 @@
                     <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">第一步:选择查询结果列表
                         <span class="sr-only">30% Complete</span>
                     </div>
-                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">第二步:选择查询条件
-                        <span class="sr-only">30% Complete</span>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">第二步:选择查询条件
+                        <span class="sr-only">50% Complete</span>
                     </div>
                     <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">第三步:预览
-                        <span class="sr-only">40% Complete</span>
+                        <span class="sr-only">20% Complete</span>
                     </div>
                 </div>
             </div>
@@ -88,17 +88,7 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="list zl" id="accountNo" type="checkbox" value=""> 账户编号
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
                                         <input class="list zl" id="accountName" type="checkbox" value=""> 账户名称
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="list zl" id="customNo" type="checkbox" value=""> 客户编号
                                     </label>
                                 </div>
                                 <div class="checkbox">
@@ -114,11 +104,6 @@
                                 <div class="checkbox">
                                     <label>
                                         <input class="list zl" id="userStatus" type="checkbox" value=""> 用户状态
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="list zl" id="userType" type="checkbox" value=""> 用户类型
                                     </label>
                                 </div>
                                 <div class="checkbox">
@@ -146,17 +131,35 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
+                                        <input class="list qf" id="userId" name type="checkbox" value="userId"> 用户编号
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list qf" id="mobile" type="checkbox" value=""> 手机号码
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list qf" id="accountName" type="checkbox" value=""> 账户名称
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
                                         <input class="list qf" id="ownFee" type="checkbox" value=""> 欠费金额
                                     </label>
                                 </div>
+                                    <label>
+                                        <input class="list qf" id="beginOwnMonth" type="checkbox" value=""> 最早欠费月
+                                    </label>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="list qf" id="ownMonth" type="checkbox" value=""> 欠费月数
+                                        <input class="list qf" id="userStatus" type="checkbox" value=""> 用户状态
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="list qf" id="beginOwnMonth" type="checkbox" value=""> 最早欠费月
+                                        <input class="list qf" id="netType" type="checkbox" value> 网络类型
                                     </label>
                                 </div>
                             </div>
@@ -179,22 +182,27 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
+                                        <input class="list jf" id="userId" name type="checkbox" value="userId"> 用户编号
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list jf" id="mobile" type="checkbox" value=""> 手机号码
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="list jf" id="accountName" type="checkbox" value=""> 账户名称
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
                                         <input class="list jf" id="yearRecord" type="checkbox" value=""> 年底到期积分
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="list jf" id="recorded" type="checkbox" value=""> 已用积分
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
                                         <input class="list jf" id="leftRecord" type="checkbox" value=""> 积分余额
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="list jf" id="newRecord" type="checkbox" value=""> 本月新增积分
                                     </label>
                                 </div>
                                 <div class="checkbox">
@@ -207,23 +215,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <ul class="list-group sortable" id="tableHead">
-                    <li class="list-group-item sort-disabled disabled" id="list_group_id">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <h4>查询结果</h4>
+                                <div class="col-md-6">
+                                    <h4>查询条件</h4>
                                 </div>
                                 <div class="col-md-3">
-                                    <a href="index3.html">
+                                    <a href="index4.html">
                                         <button type="button" class="btn btn-success">确认并下一步</button>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group" id="tableHead">
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -234,6 +246,7 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.sortable.js"></script>
+<script src="js/index2.js"></script>
 <script>
 $(document).ready(function() {
     $("#zlCheckAll").click(function(event) {
@@ -279,35 +292,6 @@ $(document).ready(function() {
         };
     });
 });
-$('.sortable').sortable();
-/*删除表头后，取消选择checkbox*/
-function deSelectCheckbox(sel) {
-    // console.log(sel)
-    $("#" + sel).attr("checked", false);
-}
-
-function addTableHead(sel) {
-    $(sel).each(function(index, el) {
-        var t_id = $(this).attr("id");
-        // console.log(t_id);
-        var t = "<li class='list-group-item'>" + $(this).parent().text() + "<button type='button' class='close' aria-label='Close' name=" + t_id + "><span aria-hidden='true'>&times;</span></button></li>";
-        $("#tableHead").append(t);
-    });
-    $('.sortable').sortable({
-        items: ':not(.sort-disabled)'
-    });
-    $("#tableHead li:not('#list_group_id') button").on('click', function(event) {
-        // console.log($(this).index())
-        deSelectCheckbox($(this).attr("name"));
-        $(this).parent().remove();
-    });
-};
-
-function deleteTableHead(sel) {
-    $(sel).each(function(index, el) {
-        $("#tableHead li[name=" + $(this).attr("id") + "]").remove();
-    });
-};
 </script>
 
 </html>
