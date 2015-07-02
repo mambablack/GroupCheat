@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-success">&nbsp;&nbsp;订&nbsp;&nbsp;&nbsp;&nbsp;阅&nbsp;&nbsp;</button>
+                        <button type="button" id="subscribe" class="btn btn-success">&nbsp;&nbsp;订&nbsp;&nbsp;&nbsp;&nbsp;阅&nbsp;&nbsp;</button>
                     </div>
                 </div>
             </div>
@@ -355,7 +355,6 @@
                     <table class="table table-bordered table-condensed" align="center">
                         <tr>
                             <td>月份</td>
-                            <td colspan="3">总体消费</td>
                             <td colspan="3">2G产品</td>
                             <td colspan="3">3G产品</td>
                             <td colspan="3">4G产品</td>
@@ -367,9 +366,6 @@
                         </tr>
                         <tr>
                             <td>201506</td>
-                            <td style="width:80px">本月到期</td>
-                            <td style="width:80px">下月到期</td>
-                            <td style="width:80px">三月内到期</td>
                             <td style="width:80px">本月到期</td>
                             <td style="width:80px">下月到期</td>
                             <td style="width:80px">三月内到期</td>
@@ -419,13 +415,12 @@
                         </tr>
                         <tr>
                             <td>201506</td>
-                            <td>201506</td>
-                            <td>欠费账户数</td>
-                            <td>欠费总用户数</td>
-                            <td>3G/3G欠费用户数</td>
-                            <td>5G欠费用户数</td>
-                            <td>5G欠费金额</td>
-                            <td>3G/3G欠费金额</td>
+                            <td>欠费账户数 </td>
+                            <td>欠费总用户数 </td>
+                            <td>2G/3G欠费用户数</td>
+                            <td>4G欠费用户数 </td>
+                            <td>4G欠费金额</td>
+                            <td>2G/3G欠费金额</td>
                             <td>总欠费金额</td>
                             <td>欠费周期</td>
                             <td>最早欠费月份</td>
@@ -449,6 +444,9 @@
 $(document).ready(function() {
     $("#checkAll").click(function(event) {
         $("input").prop("checked", this.checked);
+    });
+    $("#subscribe").click(function(event) {
+        $(this).text("订阅成功!")
     });
 });
 </script>
