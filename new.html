@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>集客分析系统</title>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <!-- <link href="media/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="media/css/bootstrap.css" rel="stylesheet">
+    <link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="media/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="media/css/jquery.gritter.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/fullcalendar.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/jqvmap.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="media/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- END PAGE LEVEL STYLES -->
+    <link rel="shortcut icon" href="media/image/favicon.ico" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">集客分析系统</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">产品分析报告</a></li>
+                    <li class="active"><a href="#">账单分析报告</a></li>
+                    <li><a href="#">欠费分析报告</a></li>
+                    <li><a href="#">话务分析报告</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1><img src="media/image/bmw.jpg" style="width:100px" alt="">宝马(中国)有限公司</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="responsive span6" data-tablet="span6" data-desktop="span3">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="icon-comments"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            账单总费用:1213.21万元
+                        </div>
+                        <div class="desc">
+                            企业账户部分账单金额:1000万元
+                        </div>
+                        <div class="desc">
+                            个人账户部分账单金额:213.21万元
+                        </div>
+                    </div>
+                    <span class="more">2015年7月</span>
+                </div>
+            </div>
+            <div class="responsive span6" data-tablet="span6" data-desktop="span3">
+                <div class="dashboard-stat green">
+                    <div class="visual">
+                        <i class="icon-shopping-cart"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">消费金额:456.02万元</div>
+                        <div class="desc">&nbsp;</div>
+                        <div class="desc">&nbsp;</div>
+                    </div>
+                    <span class="more">2015年7月</span>
+                </div>
+            </div>
+        </div>
+        <!-- 第一个表格 begin-->
+        <div class="row-fluid">
+            <div class="portlet box red">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-reorder"></i>账单总费用(单位:元)</div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span1"></div>
+                        <div id="canvas-holder" class="span6">
+                            <canvas id="chart-area1" width="300" height="300" />
+                        </div>
+                        <div class="span4">
+                            <div class="row">
+                                <table class="table col-md-12 table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th>账单科目</th>
+                                            <th>应收金额(单位:元)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <i><img src="images/infor_img1.jpg" alt="">月固定费</i>
+                                            </td>
+                                            <td>20880</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>
+                                                <i><img src="images/infor_img2.jpg" alt="">增值业务费</i>
+                                            </td>
+                                            <td>5018</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i><img src="images/infor_img3.jpg" alt="">网元/电路租用费</i></td>
+                                            <td>1000</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td><i><img src="images/infor_img4.jpg" alt="">一次性费用</i></td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i><img src="images/infor_img5.jpg" alt="">语音通话费</i></td>
+                                            <td>2500</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td><i><img src="images/taocan.png" style="width:32px;height:29px" alt="">违约金</i></td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i><img src="images/wlsj.png" style="width:32px;height:29px" alt="">可视电话费</i></td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr class="active">
+                                            <td><i><img src="images/llhalf.png" style="width:32px;height:29px" alt="">上网费</i></td>
+                                            <td>3500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>总计</td>
+                                            <td>33398</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 第一个表格 end-->
+        <!-- 第二个表格 begin-->
+        <div class="row-fluid">
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-reorder"></i>个人自付部分费用(单位:元)</div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span1"></div>
+                        <div id="canvas-holder" class="span6">
+                            <canvas id="chart-area2" width="300" height="300" />
+                        </div>
+                        <div class="span4">
+                            <div class="row">
+                                <table class="table col-md-12 table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th>账单科目</th>
+                                            <th>应收金额(单位:元)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <i><img src="images/infor_img1.jpg" alt="">月固定费</i>
+                                            </td>
+                                            <td>20880</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>
+                                                <i><img src="images/infor_img2.jpg" alt="">增值业务费</i>
+                                            </td>
+                                            <td>5018</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i><img src="images/infor_img3.jpg" alt="">网元/电路租用费</i></td>
+                                            <td>1000</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td><i><img src="images/infor_img4.jpg" alt="">一次性费用</i></td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i><img src="images/infor_img5.jpg" alt="">语音通话费</i></td>
+                                            <td>2500</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td><i><img src="images/taocan.png" style="width:32px;height:29px" alt="">违约金</i></td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i><img src="images/wlsj.png" style="width:32px;height:29px" alt="">可视电话费</i></td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr class="active">
+                                            <td><i><img src="images/llhalf.png" style="width:32px;height:29px" alt="">上网费</i></td>
+                                            <td>3500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>总计</td>
+                                            <td>8350</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第二个表格end-->
+        <!-- 第三个表格 begin-->
+        <div class="row-fluid">
+            <div class="portlet box yellow">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-reorder"></i>企业代付部分费用(单位:元)</div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span1"></div>
+                        <div id="canvas-holder" class="span6">
+                            <canvas id="chart-area3" width="300" height="300" />
+                        </div>
+                        <div class="span4">
+                            <div class="row">
+                                <table class="table col-md-12 table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th>账单科目</th>
+                                            <th>应收金额(单位:元)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><i><img src="images/infor_img1.jpg" alt="">月固定费</i></td>
+                                            <td>20880</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td><i><img src="images/infor_img2.jpg" alt="">增值业务费</i></td>
+                                            <td>5018</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i><img src="images/infor_img3.jpg" alt="">网元/电路租用费</i></td>
+                                            <td>1000</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td><i><img src="images/infor_img4.jpg" alt="">一次性费用</i></td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i><img src="images/infor_img5.jpg" alt="">语音通话费</i></td>
+                                            <td>2500</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td><i><img src="images/taocan.png" style="width:32px;height:29px" alt="">违约金</i></td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i><img src="images/wlsj.png" style="width:32px;height:29px" alt="">可视电话费</i></td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td><i><img src="images/llhalf.png" style="width:32px;height:29px" alt="">上网费</i></td>
+                                            <td>3500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>总计</td>
+                                            <td>25048</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第三个表格end-->
+        <!--第四个表格 begin-->
+        <div class="row-fluid">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-reorder"></i>消费走势/消费异动分析</div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span1">&nbsp;</div>
+                        <div class="span5">
+                            <div class="row-fluid">
+                                <h2>账单金额(单位:元)</h2></div>
+                            <div class="row-fluid">
+                                <div id="canvas-holder" class="span6">
+                                    <canvas id="chart-area4" width="300" height="300" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="row">&nbsp;</div>
+                            <table class="table col-md-12 table-hover">
+                                <thead>
+                                    <tr class="active">
+                                        <th>账期</th>
+                                        <th>账单金额(单位:元)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i><img src="images/Checkmark.png" alt="">&nbsp;201501账期</i></td>
+                                        <td>30880</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td><i><img src="images/Checkmark.png" alt="">&nbsp;201502账期</i></td>
+                                        <td>39880</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i><img src="images/Checkmark.png" alt="">&nbsp;201503账期</i></td>
+                                        <td>38880</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td><i><img src="images/Checkmark.png" alt="">&nbsp;201504账期</i></td>
+                                        <td>37880</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i><img src="images/Checkmark.png" alt="">&nbsp;201505账期</i></td>
+                                        <td>36880</td>
+                                    </tr>
+                                    <tr class="warning">
+                                        <td><i><img src="images/Checkmark.png" alt="">&nbsp;201506账期</i></td>
+                                        <td>35880</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第四个表格 end-->
+        <!--第5个表格 begin-->
+        <div class="row-fluid">
+            <div class="portlet box purple">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-reorder"></i>代付方案分析</div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span1">&nbsp;</div>
+                        <div class="span5">
+                            <div class="row-fluid">
+                                <h2>&nbsp;&nbsp;&nbsp;&nbsp;用户数</h2></div>
+                            <div class="row-fluid">
+                                <div id="canvas-holder" class="span6">
+                                    <canvas id="chart-area5" width="300" height="300" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="row">&nbsp;</div>
+                            <table class="table col-md-12 table-hover">
+                                <thead>
+                                    <tr class="active">
+                                        <th>代付方案</th>
+                                        <th>用户数</th>
+                                        <th>代付金额(元)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i><img src="images/arrow.png" style="width:32px;height:29px" alt="">&nbsp;代付4G套餐的月租</i></td>
+                                        <td>636</td>
+                                        <td>12345</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td><i><img src="images/arrow.png" style="width:32px;height:29px" alt="">&nbsp;代付3G套餐的本地费</i></td>
+                                        <td>232</td>
+                                        <td>2234</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i><img src="images/arrow.png" style="width:32px;height:29px" alt="">&nbsp;代付固网月租</i></td>
+                                        <td>325</td>
+                                        <td>34566</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td><i><img src="images/arrow.png" style="width:32px;height:29px" alt="">&nbsp;全额代付</i></td>
+                                        <td>234</td>
+                                        <td>234134</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i><img src="images/arrow.png" style="width:32px;height:29px" alt="">&nbsp;其他代付</i></td>
+                                        <td>122</td>
+                                        <td>23413</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第5个表格 end-->
+        <!--第6个表格 begin-->
+        <div class="row-fluid">
+            <div class="portlet box red">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-reorder"></i>资金情况分析</div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span1">&nbsp;</div>
+                        <div class="span5">
+                            <div class="row-fluid">
+                                <h2>&nbsp;&nbsp;&nbsp;&nbsp;资金组成</h2></div>
+                            <div class="row-fluid">
+                                <div id="canvas-holder" class="span8">
+                                    <canvas id="chart-area6" width="600" height="600" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="row">&nbsp;</div>
+                            <table class="table col-md-12 table-hover">
+                                <thead>
+                                    <tr class="active">
+                                        <th>资金类型</th>
+                                        <th>余额(单位:元)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i><img src="images/dollar.png" style="width:32px;height:29px" alt="">&nbsp;普通预存款</i></td>
+                                        <td>7950</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td><i><img src="images/dollar.png" style="width:32px;height:29px" alt="">&nbsp;普通赠款</i></td>
+                                        <td>5000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i><img src="images/dollar.png" style="width:32px;height:29px" alt="">&nbsp;专用预存款</i></td>
+                                        <td>1700</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td><i><img src="images/dollar.png" style="width:32px;height:29px" alt="">&nbsp;专用赠款</i></td>
+                                        <td>2600</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i><img src="images/dollar.png" style="width:32px;height:29px" alt="">&nbsp;冻结预存款</i></td>
+                                        <td>15000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i><img src="images/dollar.png" style="width:32px;height:29px" alt="">&nbsp;冻结赠款</i></td>
+                                        <td>12000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第6个表格 end-->
+    </div>
+    <!-- END FOOTER -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="media/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+
+    <script src="media/js/excanvas.min.js"></script>
+
+    <script src="media/js/respond.min.js"></script>  
+
+    <![endif]-->
+    <script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="media/js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script src="media/js/jquery.uniform.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="media/js/jquery.flot.js"></script>
+    <script src="media/js/jquery.flot.resize.js"></script>
+    <script src="media/js/jquery.flot.pie.js"></script>
+    <script src="media/js/jquery.flot.stack.js"></script>
+    <script src="media/js/jquery.flot.crosshair.js"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="media/js/app.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="js/Chart.Doughnut.js"></script>
+    <script>
+    jQuery(document).ready(function() {
+        var pie1 = [{
+                value: 20880,
+                color: "#F7464A",
+                highlight: "#FF5A5E",
+                label: "月固定费"
+            }, {
+                value: 5018,
+                color: "#46BFBD",
+                highlight: "#5AD3D1",
+                label: "增值业务费"
+            }, {
+                value: 1000,
+                color: "#FDB45C",
+                highlight: "#FFC870",
+                label: "网元/电路租用费"
+            }, {
+                value: 0,
+                color: "#949FB1",
+                highlight: "#A8B3C5",
+                label: "一次性费用"
+            }, {
+                value: 2500,
+                color: "#4D5360",
+                highlight: "#616774",
+                label: "语音通话费"
+            }, {
+                value: 0,
+                color: "#6600CC",
+                highlight: "#616774",
+                label: "违约金"
+            }, {
+                value: 500,
+                color: "#00FFCC",
+                highlight: "#00FFFF",
+                label: "可视电话费"
+            }, {
+                value: 3500,
+                color: "#00CC33",
+                highlight: "#00CC66",
+                label: "上网费"
+            }
+
+        ];
+        var pie2 = [{
+                value: 0,
+                color: "#F7464A",
+                highlight: "#FF5A5E",
+                label: "月固定费"
+            }, {
+                value: 2500,
+                color: "#46BFBD",
+                highlight: "#5AD3D1",
+                label: "增值业务费"
+            }, {
+                value: 0,
+                color: "#FDB45C",
+                highlight: "#FFC870",
+                label: "网元/电路租用费"
+            }, {
+                value: 0,
+                color: "#949FB1",
+                highlight: "#A8B3C5",
+                label: "一次性费用"
+            }, {
+                value: 2200,
+                color: "#4D5360",
+                highlight: "#616774",
+                label: "语音通话费"
+            }, {
+                value: 0,
+                color: "#6600CC",
+                highlight: "#616774",
+                label: "违约金"
+            }, {
+                value: 450,
+                color: "#00FFCC",
+                highlight: "#00FFFF",
+                label: "可视电话费"
+            }, {
+                value: 3150,
+                color: "#00CC33",
+                highlight: "#00CC66",
+                label: "上网费"
+            }
+
+        ];
+        var pie3 = [{
+                value: 20880,
+                color: "#F7464A",
+                highlight: "#FF5A5E",
+                label: "月固定费"
+            }, {
+                value: 2518,
+                color: "#46BFBD",
+                highlight: "#5AD3D1",
+                label: "增值业务费"
+            }, {
+                value: 1000,
+                color: "#FDB45C",
+                highlight: "#FFC870",
+                label: "网元/电路租用费"
+            }, {
+                value: 0,
+                color: "#949FB1",
+                highlight: "#A8B3C5",
+                label: "一次性费用"
+            }, {
+                value: 250,
+                color: "#4D5360",
+                highlight: "#616774",
+                label: "语音通话费"
+            }, {
+                value: 0,
+                color: "#6600CC",
+                highlight: "#616774",
+                label: "违约金"
+            }, {
+                value: 50,
+                color: "#00FFCC",
+                highlight: "#00FFFF",
+                label: "可视电话费"
+            }, {
+                value: 350,
+                color: "#00CC33",
+                highlight: "#00CC66",
+                label: "上网费"
+            }
+
+        ];
+        /**
+        消费走势
+        **/
+        var data4 = {
+            labels: ["201501账期", "201502账期", "201503账期", "201504账期", "201505账期", "201506账期"],
+            datasets: [{
+                fillColor: "rgba(0,0,204,1)",
+                // strokeColor: "rgba(220,220,220,1)",
+                data: [30880, 39880, 38880, 37880, 36880, 35880]
+            }]
+        };
+
+        var doughnutData = [{
+                value: 636,
+                label: "代付4G套餐的月租"
+            }, {
+                value: 232,
+                label: "代付3G套餐的本地费"
+            }, {
+                value: 325,
+                label: "代付固网月租"
+            }, {
+                value: 234,
+                label: "全额代付"
+            }, {
+                value: 122,
+                label: "其他代付"
+            }
+
+        ];
+
+        var radarChartData = {
+            labels: ["普通预存款", "普通赠款", "专用预存款", "专用赠款", "冻结预存款", "冻结赠款"],
+            datasets: [{
+                label: "My Second dataset",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: [7950, 5000, 1700, 2600, 15000, 12000]
+            }]
+        };
+        var ctx1 = $("#chart-area1")[0].getContext("2d");
+        new Chart(ctx1).Pie(pie1);
+
+        var ctx2 = $("#chart-area2")[0].getContext("2d");
+        new Chart(ctx2).Pie(pie2);
+
+        var ctx3 = $("#chart-area3")[0].getContext("2d");
+        new Chart(ctx3).Pie(pie3);
+
+        var ctx4 = $("#chart-area4")[0].getContext("2d");
+        new Chart(ctx4).Bar(data4, {
+            barShowStroke: false,
+            scaleOverlay: true
+        });
+        var ctx5 = $("#chart-area5")[0].getContext("2d");
+        new Chart(ctx5).Doughnut(doughnutData, {
+            responsive: true
+        });
+        var ctx6 = $("#chart-area6")[0].getContext("2d");
+        new Chart(ctx6).Radar(radarChartData, {
+            responsive: true
+        });
+
+    });
+    </script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+</body>
+<!-- END BODY -->
+
+</html>
